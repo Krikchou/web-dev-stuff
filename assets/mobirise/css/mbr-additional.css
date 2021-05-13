@@ -1289,6 +1289,103 @@ a {
   display: none;
 }
 .cid-sxd8gC5HYf {
+  padding-top: 45px;
+  padding-bottom: 60px;
+  background-color: #191919;
+}
+.cid-sxd8gC5HYf .mbr-overlay {
+  background-color: #000000;
+  opacity: 0.7;
+}
+.cid-sxd8gC5HYf .item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.3rem 0;
+}
+.cid-sxd8gC5HYf .item p {
+  margin: 0;
+  padding-left: 0.5rem;
+}
+.cid-sxd8gC5HYf .title {
+  background: linear-gradient(to left, #6a0002, currentColor);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #e2090d;
+}
+.cid-sxd8gC5HYf .container {
+  max-width: 1400px;
+}
+.cid-sxd8gC5HYf li {
+  margin: 0;
+  list-style: none;
+  cursor: pointer;
+}
+.cid-sxd8gC5HYf .time {
+  line-height: 2;
+}
+.cid-sxd8gC5HYf .icons-wrap {
+  display: flex;
+  align-items: center;
+}
+.cid-sxd8gC5HYf .text-wrap {
+  width: 100%;
+}
+.cid-sxd8gC5HYf .item-wrap {
+  display: inline-block;
+}
+.cid-sxd8gC5HYf .socicon-wrap {
+  width: fit-content;
+  display: flex;
+  margin-bottom: 0.8rem;
+}
+.cid-sxd8gC5HYf .socicon-wrap .mbr-iconfont {
+  font-size: 1.3rem;
+  background: linear-gradient(to left, #6a0002, #ff4500);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding: 10px;
+  margin-right: 0.1rem;
+  height: 40px;
+  display: flex;
+  width: 40px;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s;
+  border-radius: 100%;
+}
+.cid-sxd8gC5HYf .align-wrap {
+  display: flex;
+  flex-direction: column;
+}
+@media (max-width: 992px) {
+  .cid-sxd8gC5HYf .col-md-6 {
+    margin-bottom: 2rem;
+  }
+}
+@media (max-width: 767px) {
+  .cid-sxd8gC5HYf .socicon-wrap {
+    margin: auto;
+  }
+}
+.cid-sxd8gC5HYf .mbr-text {
+  color: #999999;
+}
+.cid-sxd8gC5HYf .icon-title {
+  margin: 0;
+  padding-bottom: 3px;
+}
+.cid-sxd8gC5HYf .icon-title,
+.cid-sxd8gC5HYf .align-wrap {
+  color: #999999;
+  width: 100%;
+  text-align: center;
+}
+.cid-sxd8gC5HYf .item-text,
+.cid-sxd8gC5HYf .item-icon {
+  color: #999999;
+}
+.cid-sxd8gC5HYf {
   padding-top: 105px;
   padding-bottom: 105px;
   background-color: #191919;

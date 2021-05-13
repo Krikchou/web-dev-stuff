@@ -31,7 +31,7 @@
         "#6a0002",
         "#ff4500"
       ],
-      "dynamicStyles": "@btn-font-size: .8rem;\n@btn-border-radius: 0px;\n@btn-padding-y: 1rem;\n@btn-padding-x: 3rem;\n@btn-font-size-sm: .8rem;\n@btn-border-radius-sm: 0px;\n@btn-padding-y-sm: .6rem;\n@btn-padding-x-sm: 1.2rem;\n@btn-font-size-md: 1rem;\n@btn-border-radius-md: 0px;\n@btn-padding-y-md: 1rem;\n@btn-padding-x-md: 2.6rem;\n@btn-font-size-lg: 1.2rem;\n@btn-border-radius-lg: 0px;\n@btn-padding-y-lg: 1.2rem;\n@btn-padding-x-lg: 3.2rem;\n\n// FONTS\n\nbody {\n    font-family: @mainFont;\n}\n\n.display-1 {\n    font-family: @display1Font;\n    font-size: @display1Size *1rem;\n    line-height: 1.2;\n    >.mbr-iconfont {\n        font-size: @display1Size *1.6rem;\n    }\n}\n\n.display-2 {\n    font-family: @display2Font;\n    font-size: @display2Size *1rem;\n    line-height: 1.4;\n\n    >.mbr-iconfont {\n        font-size: @display2Size *1.6rem;\n    }\n}\n\n.display-4 {\n    font-family: @display4Font;\n    font-size: @display4Size *1rem;\n    line-height: 1.3;\n\n    >.mbr-iconfont {\n        font-size: @display4Size *1.6rem;\n    }\n}\n\n.display-5 {\n    font-family: @display5Font;\n    font-size: @display5Size *1rem;\n    line-height: 1.4;\n\n    >.mbr-iconfont {\n        font-size: @display5Size *1.6rem;\n    }\n}\n\n.display-7 {\n    font-family: @display7Font;\n    font-size: @display7Size *1rem;\n    line-height: 1.4;\n\n    >.mbr-iconfont {\n        font-size: @display7Size *1.6rem;\n    }\n}\n\n/* ---- Fluid typography for mobile devices ---- */\n\n/* 1.4 - font scale ratio ( bootstrap == 1.42857 ) */\n/* 100vw - current viewport width */\n/* (48 - 20)  48 == 48rem == 768px, 20 == 20rem == 320px(minimal supported viewport) */\n/* 0.65 - min scale variable, may vary */\n\n\n@media (max-width: 768px) {\n    .display-1 {\n        @display1Size-min: @display1Size - (@display1Size - 1) * 0.65;\n        font-size: @display1Size * 0.7rem;\n        font-size:~\"calc( @{display1Size-min}rem + (@{display1Size} - @{display1Size-min}) * ((100vw - 20rem) / (48 - 20)))\";\n        line-height:~\"calc( 1.1 * (@{display1Size-min}rem + (@{display1Size} - @{display1Size-min}) * ((100vw - 20rem) / (48 - 20))))\";\n    }\n\n    .display-2 {\n        @display2Size-min: @display2Size - (@display2Size - 1) * 0.65;\n        font-size: @display2Size * 0.8rem;\n        font-size:~\"calc( @{display2Size-min}rem + (@{display2Size} - @{display2Size-min}) * ((100vw - 20rem) / (48 - 20)))\";\n        line-height:~\"calc( 1.3 * (@{display2Size-min}rem + (@{display2Size} - @{display2Size-min}) * ((100vw - 20rem) / (48 - 20))))\";\n    }\n\n    .display-4 {\n        @display4Size-min: @display4Size - (@display4Size - 1) * 0.65;\n        font-size: @display4Size * 0.9rem!important;\n        font-size:~\"calc( @{display4Size-min}rem + (@{display4Size} - @{display4Size-min}) * ((100vw - 20rem) / (48 - 20)))\";\n        line-height:~\"calc( 1.4 * (@{display4Size-min}rem + (@{display4Size} - @{display4Size-min}) * ((100vw - 20rem) / (48 - 20))))\";\n    }\n\n    .display-5 {\n        @display5Size-min: @display5Size - (@display5Size - 1) * 0.65;\n        font-size: @display5Size * 0.8rem;\n        font-size:~\"calc( @{display5Size-min}rem + (@{display5Size} - @{display5Size-min}) * ((100vw - 20rem) / (48 - 20)))\";\n        line-height:~\"calc( 1.4 * (@{display5Size-min}rem + (@{display5Size} - @{display5Size-min}) * ((100vw - 20rem) / (48 - 20))))\";\n    }\n    .display-7 {\n        @display7Size-min: @display7Size - (@display7Size - 1) * 0.65;\n        font-size: @display7Size * 0.8rem;\n        font-size:~\"calc( @{display7Size-min}rem + (@{display7Size} - @{display7Size-min}) * ((100vw - 20rem) / (48 - 20)))\";\n        line-height:~\"calc( 1.4 * (@{display7Size-min}rem + (@{display7Size} - @{display7Size-min}) * ((100vw - 20rem) / (48 - 20))))\";\n    }\n}\n\n/* Buttons */\n\n.button-variant(@background) {\n    @color: darken(@background, 50%);\n    @border: @background;\n    @active-color: @color;\n    @active-border: @active-background;\n\n    @active-background: if(eq(@background, @color),\n        #d4d4d4,\n        darken(@background, 15%));\n\n    &,\n    &:active {\n        background-color: @background  !important;\n        border-color: @border  !important;\n        color: @color  !important;\n    }\n\n    &:hover,\n    &:focus,\n    &.focus,\n    &.active {\n        color: @active-color  !important;\n        background-color: @active-background  !important;\n        border-color: @active-border  !important;\n    }\n\n    &.disabled,\n    &:disabled {\n        color: @active-color  !important;\n        background-color: @active-background  !important;\n        border-color: @active-border  !important;\n    }\n\n}\n\n.button-variant(@background) {\n    &:hover {\n        background-color: @primaryColor!important;\n        border-color: @primaryColor!important;\n    }\n    }\n\n\n.button-outline-variant(@color) {\n    @active-color: contrast(@color, darken(@color, 50%), #ffffff, 60%);\n    @active-background: @color;\n    @new-color: if(eq(@color, @active-color),\n        #fff,\n        darken(@color, 0%));\n\n    &,\n    &:active {\n        background: none;\n        border-color: @new-color;\n        color: @new-color;\n    }\n\n    &:hover,\n    &:focus,\n    &.focus,\n    &.active {\n        color: @active-color;\n        background-color: @active-background;\n        border-color: @active-background;\n    }\n\n    &.disabled,\n    &:disabled {\n        color: @active-color  !important;\n        background-color: @active-background  !important;\n        border-color: @active-background  !important;\n    }\n}\n\n\n\n\n.plan-variant(@className, @color) {\n    &@{className} {\n\n        .mbr-plan-subtitle,\n        .mbr-plan-price-desc {\n            @max: max(red(@color), green(@color), blue(@color));\n\n            & when (@max > 200) {\n                color: lighten(@color, 40%);\n            }\n\n            & when (@max > 85) and (@max <=200) {\n                color: lighten(@color, 25%);\n            }\n\n            & when (@max > 50) and (@max <=85) {\n                color: lighten(@color, 45%);\n            }\n\n            & when (@max <=50) {\n                color: lighten(@color, 70%);\n            }\n        }\n    }\n}\n\n\n\n\n\n.button-size(@btn-padding-y, @btn-padding-x, @btn-font-size, @btn-border-radius) {\n    padding: @btn-padding-y @btn-padding-x;\n    border-radius: @btn-border-radius;\n}\n\n.btn {\n    .button-size(@btn-padding-y, @btn-padding-x, @btn-font-size, @btn-border-radius);\n}\n\n.btn-sm {\n    .button-size(@btn-padding-y-sm, @btn-padding-x-sm, @btn-font-size-sm, @btn-border-radius-sm);\n}\n\n.btn-md {\n    .button-size(@btn-padding-y-md, @btn-padding-x-md, @btn-font-size-md, @btn-border-radius-md);\n}\n\n.btn-lg {\n    .button-size(@btn-padding-y-lg, @btn-padding-x-lg, @btn-font-size-lg, @btn-border-radius-lg);\n}\n\n.bg-primary {\n    background-color: @primaryColor  !important;\n}\n\n.bg-success {\n    background-color: @successColor  !important;\n}\n\n.bg-info {\n    background-color: @infoColor  !important;\n}\n\n.bg-warning {\n    background-color: @warningColor  !important;\n}\n\n.bg-danger {\n    background-color: @dangerColor  !important;\n}\n\n.btn-primary {\n    .button-variant(@primaryColor);\n}\n\n.btn-secondary {\n    .button-variant(@secondaryColor);\n}\n\n.btn-info {\n    .button-variant(@infoColor);\n}\n\n.btn-success {\n    .button-variant(@successColor);\n}\n\n.btn-warning {\n    .button-variant(@warningColor);\n}\n\n.btn-danger {\n    .button-variant(@dangerColor);\n}\n\n.btn-white {\n    .button-variant(#f3f3f3);\n    &:hover {\n        color: white!important;\n    }\n}\n\n.btn-black {\n    .button-variant(#000000);\n}\n\n.btn-primary-outline {\n    .button-outline-variant(@primaryColor);\n}\n\n.btn-secondary-outline {\n    .button-outline-variant(@secondaryColor);\n}\n\n.btn-info-outline {\n    .button-outline-variant(@infoColor);\n}\n\n.btn-success-outline {\n    .button-outline-variant(@successColor);\n}\n\n.btn-warning-outline {\n    .button-outline-variant(@warningColor);\n}\n\n.btn-danger-outline {\n    .button-outline-variant(@dangerColor);\n}\n\n.btn-black-outline {\n    .button-outline-variant(#333333);\n}\n\n.btn-white-outline {\n    .button-outline-variant(#f3f3f3);\n}\n\n\n\n.text-primary {\n    color: @primaryColor  !important;\n}\n\n.text-secondary {\n    color: @secondaryColor  !important;\n}\n\n.text-success {\n    color: @successColor  !important;\n}\n\n.text-info {\n    color: @infoColor  !important;\n}\n\n.text-warning {\n    color: @warningColor  !important;\n}\n\n.text-danger {\n    color: @dangerColor  !important;\n}\n\n.text-white {\n    color: #ffffff !important;\n}\n\n.text-black {\n    color: #000000 !important;\n}\n\na.text-primary:hover,\na.text-primary:focus {\n    color: lighten(@primaryColor, 20%) !important;\n}\n\na.text-secondary:hover,\na.text-secondary:focus {\n    color: lighten(@secondaryColor, 20%) !important;\n}\n\na.text-success:hover,\na.text-success:focus {\n    color: lighten(@successColor, 20%) !important;\n}\n\na.text-info:hover,\na.text-info:focus {\n    color: lighten(@infoColor, 20%) !important;\n}\n\na.text-warning:hover,\na.text-warning:focus {\n    color: lighten(@warningColor, 20%) !important;\n}\n\na.text-danger:hover,\na.text-danger:focus {\n    color: lighten(@dangerColor, 20%) !important;\n}\n\na.text-white:hover,\na.text-white:focus {\n    color: lighten(#ffffff, 30%) !important;\n}\n\na.text-black:hover,\na.text-black:focus {\n    color: lighten(#000000, 30%) !important;\n}\n\n.alert-success {\n    background-color: #70c770;\n}\n\n.alert-info {\n    background-color: @infoColor;\n}\n\n.alert-warning {\n    background-color: @warningColor;\n}\n\n.alert-danger {\n    background-color: @dangerColor;\n}\n\n.mbr-section-btn a.btn:not(.btn-form) {\n\n\n\n    & when (@isRoundedButtons) {\n        border-radius: 100px;\n\n        &:hover,\n        &:focus {\n            box-shadow: 0 10px 40px 0 rgba(0, 0, 0, .2) !important;\n            -webkit-box-shadow: 0 10px 40px 0 rgba(0, 0, 0, .2) !important;\n        }\n    }\n}\n\n.mbr-gallery-filter li a when(@isRoundedButtons) {\n    border-radius: 100px !important;\n}\n\n.mbr-gallery-filter {\n    li.active .btn {\n        background-color: @primaryColor;\n        border-color: @primaryColor;\n        color: contrast(@primaryColor, darken(@primaryColor, 45%), #ffffff, 60%);\n\n        &:focus {\n            box-shadow: none;\n        }\n    }\n}\n\n.nav-tabs .nav-link when(@isRoundedButtons) {\n    border-radius: 100px !important;\n}\n\na,\na:hover {\n    color: @primaryColor;\n}\n\n.mbr-plan-header {\n    .plan-variant(~'.bg-primary', @primaryColor);\n    .plan-variant(~'.bg-success', @successColor);\n    .plan-variant(~'.bg-info', @infoColor);\n    .plan-variant(~'.bg-warning', @warningColor);\n    .plan-variant(~'.bg-danger', @dangerColor);\n}\n\n/* Scroll to top button*/\n.scrollToTop_wraper when not(@isScrollToTopButton) {\n    display: none;\n}\n\n#scrollToTop a when (@isScrollToTopButton) and (@isRoundedButtons) {\n    border-radius: 100px;\n}\n\nblockquote {\n    border-color: @primaryColor;\n}\n\n/* Forms */\n.mbr-form {\n    .btn {\n        margin: .4rem 0;\n    }\n\n    .input-group-btn a.btn when(@isRoundedButtons) {\n        border-radius: 100px !important;\n\n        // padding: 1rem 3rem;\n        &:hover {\n            box-shadow: 0 10px 40px 0 rgba(0, 0, 0, .2);\n        }\n    }\n\n    .input-group-btn button[type=\"submit\"] when (@isRoundedButtons) {\n        border-radius: 100px !important;\n        padding: 1rem 3rem;\n\n        &:hover {\n            box-shadow: 0 10px 40px 0 rgba(0, 0, 0, .2);\n        }\n    }\n}\n\n//formstyler\n.jq-selectbox li:hover,\n.jq-selectbox li.selected {\n    background-color: @primaryColor;\n    color: contrast(@primaryColor, #000000, #ffffff, 60%)\n}\n\n.jq-selectbox .jq-selectbox__trigger-arrow,\n.jq-number__spin.minus:after,\n.jq-number__spin.plus:after {\n    transition: 0.4s;\n    border-top-color: gray !important;\n    border-bottom-color: gray !important;\n}\n\n.jq-selectbox:hover .jq-selectbox__trigger-arrow,\n.jq-number__spin.minus:hover:after,\n.jq-number__spin.plus:hover:after {\n    border-top-color: @primaryColor;\n    border-bottom-color: @primaryColor;\n}\n\n.xdsoft_datetimepicker .xdsoft_calendar td.xdsoft_default,\n.xdsoft_datetimepicker .xdsoft_calendar td.xdsoft_current,\n.xdsoft_datetimepicker .xdsoft_timepicker .xdsoft_time_box>div>div.xdsoft_current {\n    color: contrast(@primaryColor, #000, #fff, 30%) !important;\n    background-color: @primaryColor !important;\n    box-shadow: none !important;\n}\n\n.xdsoft_datetimepicker .xdsoft_calendar td:hover,\n.xdsoft_datetimepicker .xdsoft_timepicker .xdsoft_time_box>div>div:hover {\n    color: contrast(@secondaryColor, #000, #fff, 30%) !important;\n    background: @secondaryColor  !important;\n    box-shadow: none !important\n}\n\n//lazyload\n.lazy-bg {\n    background-image: none !important;\n}\n\n.lazy-placeholder:not(section),\n.lazy-none {\n    display: block;\n    position: relative;\n    padding-bottom: 56.25%;\n    width:100%;\n    height:auto;\n}\niframe.lazy-placeholder,\n.lazy-placeholder:after {\n    content: '';\n    position: absolute;\n    width: 200px;\n    height: 200px;\n    background: transparent no-repeat center;\n    background-size: contain;\n    top: 50%;\n    left: 50%;\n    transform: translateX(-50%) translateY(-50%);\n    @fillSVG: replace(\"@{primaryColor}\", \"#\", \"%23\");\n    background-image: url(\"data:image/svg+xml;charset=UTF-8,%3csvg width='32' height='32' viewBox='0 0 64 64' xmlns='http://www.w3.org/2000/svg' stroke='@{fillSVG}' %3e%3cg fill='none' fill-rule='evenodd'%3e%3cg transform='translate(16 16)' stroke-width='2'%3e%3ccircle stroke-opacity='.5' cx='16' cy='16' r='16'/%3e%3cpath d='M32 16c0-9.94-8.06-16-16-16'%3e%3canimateTransform attributeName='transform' type='rotate' from='0 16 16' to='360 16 16' dur='1s' repeatCount='indefinite'/%3e%3c/path%3e%3c/g%3e%3c/g%3e%3c/svg%3e\");\n}\n\nsection.lazy-placeholder:after {\n    opacity: 0.5;\n}\nbody {\n    overflow-x: hidden;\n  }\n\n  a {\n      transition: color 0.6s;\n  }\n\n\n.btn {\n    transition: none;\n}\n\n.button-variant(@background) {\n    &:hover, &:focus {\n        background: linear-gradient(to left, @secondaryColor, @background);\n        border-color: transparent!important;\n        background-size: 110%;\n            background-position: center;\n        }\n\n}\n\n  .button-outline-variant(@color) {\n      color: white!important;\n&:hover, &:focus {\nbackground: @secondaryColor;\nborder-color: transparent!important;\nbackground-size: 110%;\n    background-position: center;\n}\n\n  }"
+      "dynamicStyles": "@btn-font-size: .8rem;\n@btn-border-radius: 0px;\n@btn-padding-y: 1rem;\n@btn-padding-x: 3rem;\n@btn-font-size-sm: .8rem;\n@btn-border-radius-sm: 0px;\n@btn-padding-y-sm: .6rem;\n@btn-padding-x-sm: 1.2rem;\n@btn-font-size-md: 1rem;\n@btn-border-radius-md: 0px;\n@btn-padding-y-md: 1rem;\n@btn-padding-x-md: 2.6rem;\n@btn-font-size-lg: 1.2rem;\n@btn-border-radius-lg: 0px;\n@btn-padding-y-lg: 1.2rem;\n@btn-padding-x-lg: 3.2rem;\n\n// FONTS\n\nbody {\n    font-family: @mainFont;\n}\n\n.display-1 {\n    font-family: @display1Font;\n    font-size: @display1Size *1rem;\n    line-height: 1.2;\n    >.mbr-iconfont {\n        font-size: @display1Size *1.6rem;\n    }\n}\n\n.display-2 {\n    font-family: @display2Font;\n    font-size: @display2Size *1rem;\n    line-height: 1.4;\n\n    >.mbr-iconfont {\n        font-size: @display2Size *1.6rem;\n    }\n}\n\n.display-4 {\n    font-family: @display4Font;\n    font-size: @display4Size *1rem;\n    line-height: 1.3;\n\n    >.mbr-iconfont {\n        font-size: @display4Size *1.6rem;\n    }\n}\n\n.display-5 {\n    font-family: @display5Font;\n    font-size: @display5Size *1rem;\n    line-height: 1.4;\n\n    >.mbr-iconfont {\n        font-size: @display5Size *1.6rem;\n    }\n}\n\n.display-7 {\n    font-family: @display7Font;\n    font-size: @display7Size *1rem;\n    line-height: 1.4;\n\n    >.mbr-iconfont {\n        font-size: @display7Size *1.6rem;\n    }\n}\n\n/* ---- Fluid typography for mobile devices ---- */\n\n/* 1.4 - font scale ratio ( bootstrap == 1.42857 ) */\n/* 100vw - current viewport width */\n/* (48 - 20)  48 == 48rem == 768px, 20 == 20rem == 320px(minimal supported viewport) */\n/* 0.65 - min scale variable, may vary */\n\n\n@media (max-width: 768px) {\n    .display-1 {\n        @display1Size-min: @display1Size - (@display1Size - 1) * 0.65;\n        font-size: @display1Size * 0.7rem;\n        font-size:~\"calc( @{display1Size-min}rem + (@{display1Size} - @{display1Size-min}) * ((100vw - 20rem) / (48 - 20)))\";\n        line-height:~\"calc( 1.1 * (@{display1Size-min}rem + (@{display1Size} - @{display1Size-min}) * ((100vw - 20rem) / (48 - 20))))\";\n    }\n\n    .display-2 {\n        @display2Size-min: @display2Size - (@display2Size - 1) * 0.65;\n        font-size: @display2Size * 0.8rem;\n        font-size:~\"calc( @{display2Size-min}rem + (@{display2Size} - @{display2Size-min}) * ((100vw - 20rem) / (48 - 20)))\";\n        line-height:~\"calc( 1.3 * (@{display2Size-min}rem + (@{display2Size} - @{display2Size-min}) * ((100vw - 20rem) / (48 - 20))))\";\n    }\n\n    .display-4 {\n        @display4Size-min: @display4Size - (@display4Size - 1) * 0.65;\n        font-size: @display4Size * 0.9rem!important;\n        font-size:~\"calc( @{display4Size-min}rem + (@{display4Size} - @{display4Size-min}) * ((100vw - 20rem) / (48 - 20)))\";\n        line-height:~\"calc( 1.4 * (@{display4Size-min}rem + (@{display4Size} - @{display4Size-min}) * ((100vw - 20rem) / (48 - 20))))\";\n    }\n\n    .display-5 {\n        @display5Size-min: @display5Size - (@display5Size - 1) * 0.65;\n        font-size: @display5Size * 0.8rem;\n        font-size:~\"calc( @{display5Size-min}rem + (@{display5Size} - @{display5Size-min}) * ((100vw - 20rem) / (48 - 20)))\";\n        line-height:~\"calc( 1.4 * (@{display5Size-min}rem + (@{display5Size} - @{display5Size-min}) * ((100vw - 20rem) / (48 - 20))))\";\n    }\n    .display-7 {\n        @display7Size-min: @display7Size - (@display7Size - 1) * 0.65;\n        font-size: @display7Size * 0.8rem;\n        font-size:~\"calc( @{display7Size-min}rem + (@{display7Size} - @{display7Size-min}) * ((100vw - 20rem) / (48 - 20)))\";\n        line-height:~\"calc( 1.4 * (@{display7Size-min}rem + (@{display7Size} - @{display7Size-min}) * ((100vw - 20rem) / (48 - 20))))\";\n    }\n}\n\n/* Buttons */\n\n.button-variant(@background) {\n    @color: darken(@background, 50%);\n    @border: @background;\n    @active-color: @color;\n    @active-border: @active-background;\n\n    @active-background: if(eq(@background, @color),\n        #d4d4d4,\n        darken(@background, 15%));\n\n    &,\n    &:active {\n        background-color: @background  !important;\n        border-color: @border  !important;\n        color: @color  !important;\n    }\n\n    &:hover,\n    &:focus,\n    &.focus,\n    &.active {\n        color: @active-color  !important;\n        background-color: @active-background  !important;\n        border-color: @active-border  !important;\n    }\n\n    &.disabled,\n    &:disabled {\n        color: @active-color  !important;\n        background-color: @active-background  !important;\n        border-color: @active-border  !important;\n    }\n\n}\n\n.button-variant(@background) {\n    &:hover {\n        background-color: @primaryColor!important;\n        border-color: @primaryColor!important;\n    }\n    }\n\n\n.button-outline-variant(@color) {\n    @active-color: contrast(@color, darken(@color, 50%), #ffffff, 60%);\n    @active-background: @color;\n    @new-color: if(eq(@color, @active-color),\n        #fff,\n        darken(@color, 0%));\n\n    &,\n    &:active {\n        background: none;\n        border-color: @new-color;\n        color: @new-color;\n    }\n\n    &:hover,\n    &:focus,\n    &.focus,\n    &.active {\n        color: @active-color;\n        background-color: @active-background;\n        border-color: @active-background;\n    }\n\n    &.disabled,\n    &:disabled {\n        color: @active-color  !important;\n        background-color: @active-background  !important;\n        border-color: @active-background  !important;\n    }\n}\n\n\n\n\n.plan-variant(@className, @color) {\n    &@{className} {\n\n        .mbr-plan-subtitle,\n        .mbr-plan-price-desc {\n            @max: max(red(@color), green(@color), blue(@color));\n\n            & when (@max > 200) {\n                color: lighten(@color, 40%);\n            }\n\n            & when (@max > 85) and (@max <=200) {\n                color: lighten(@color, 25%);\n            }\n\n            & when (@max > 50) and (@max <=85) {\n                color: lighten(@color, 45%);\n            }\n\n            & when (@max <=50) {\n                color: lighten(@color, 70%);\n            }\n        }\n    }\n}\n\n\n\n\n\n.button-size(@btn-padding-y, @btn-padding-x, @btn-font-size, @btn-border-radius) {\n    padding: @btn-padding-y @btn-padding-x;\n    border-radius: @btn-border-radius;\n}\n\n.btn {\n    .button-size(@btn-padding-y, @btn-padding-x, @btn-font-size, @btn-border-radius);\n}\n\n.btn-sm {\n    .button-size(@btn-padding-y-sm, @btn-padding-x-sm, @btn-font-size-sm, @btn-border-radius-sm);\n}\n\n.btn-md {\n    .button-size(@btn-padding-y-md, @btn-padding-x-md, @btn-font-size-md, @btn-border-radius-md);\n}\n\n.btn-lg {\n    .button-size(@btn-padding-y-lg, @btn-padding-x-lg, @btn-font-size-lg, @btn-border-radius-lg);\n}\n\n.bg-primary {\n    background-color: @primaryColor  !important;\n}\n\n.bg-success {\n    background-color: @successColor  !important;\n}\n\n.bg-info {\n    background-color: @infoColor  !important;\n}\n\n.bg-warning {\n    background-color: @warningColor  !important;\n}\n\n.bg-danger {\n    background-color: @dangerColor  !important;\n}\n\n.btn-primary {\n    .button-variant(@primaryColor);\n}\n\n.btn-secondary {\n    .button-variant(@secondaryColor);\n}\n\n.btn-info {\n    .button-variant(@infoColor);\n}\n\n.btn-success {\n    .button-variant(@successColor);\n}\n\n.btn-warning {\n    .button-variant(@warningColor);\n}\n\n.btn-danger {\n    .button-variant(@dangerColor);\n}\n\n.btn-white {\n    .button-variant(#f3f3f3);\n    &:hover {\n        color: white!important;\n    }\n}\n\n.btn-black {\n    .button-variant(#000000);\n}\n\n.btn-primary-outline {\n    .button-outline-variant(@primaryColor);\n}\n\n.btn-secondary-outline {\n    .button-outline-variant(@secondaryColor);\n}\n\n.btn-info-outline {\n    .button-outline-variant(@infoColor);\n}\n\n.btn-success-outline {\n    .button-outline-variant(@successColor);\n}\n\n.btn-warning-outline {\n    .button-outline-variant(@warningColor);\n}\n\n.btn-danger-outline {\n    .button-outline-variant(@dangerColor);\n}\n\n.btn-black-outline {\n    .button-outline-variant(#333333);\n}\n\n.btn-white-outline {\n    .button-outline-variant(#f3f3f3);\n}\n\n\n\n.text-primary {\n    color: @primaryColor  !important;\n}\n\n.text-secondary {\n    color: @secondaryColor  !important;\n}\n\n.text-success {\n    color: @successColor  !important;\n}\n\n.text-info {\n    color: @infoColor  !important;\n}\n\n.text-warning {\n    color: @warningColor  !important;\n}\n\n.text-danger {\n    color: @dangerColor  !important;\n}\n\n.text-white {\n    color: #ffffff !important;\n}\n\n.text-black {\n    color: #000000 !important;\n}\n\na.text-primary:hover,\na.text-primary:focus {\n    color: lighten(@primaryColor, 20%) !important;\n}\n\na.text-secondary:hover,\na.text-secondary:focus {\n    color: lighten(@secondaryColor, 20%) !important;\n}\n\na.text-success:hover,\na.text-success:focus {\n    color: lighten(@successColor, 20%) !important;\n}\n\na.text-info:hover,\na.text-info:focus {\n    color: lighten(@infoColor, 20%) !important;\n}\n\na.text-warning:hover,\na.text-warning:focus {\n    color: lighten(@warningColor, 20%) !important;\n}\n\na.text-danger:hover,\na.text-danger:focus {\n    color: lighten(@dangerColor, 20%) !important;\n}\n\na.text-white:hover,\na.text-white:focus {\n    color: lighten(#ffffff, 30%) !important;\n}\n\na.text-black:hover,\na.text-black:focus {\n    color: lighten(#000000, 30%) !important;\n}\n\n.alert-success {\n    background-color: #70c770;\n}\n\n.alert-info {\n    background-color: @infoColor;\n}\n\n.alert-warning {\n    background-color: @warningColor;\n}\n\n.alert-danger {\n    background-color: @dangerColor;\n}\n\n.mbr-section-btn a.btn:not(.btn-form) {\n\n\n\n    & when (@isRoundedButtons) {\n        border-radius: 100px;\n\n        &:hover,\n        &:focus {\n            box-shadow: 0 10px 40px 0 rgba(0, 0, 0, .2) !important;\n            -webkit-box-shadow: 0 10px 40px 0 rgba(0, 0, 0, .2) !important;\n        }\n    }\n}\n\n.mbr-gallery-filter li a when(@isRoundedButtons) {\n    border-radius: 100px !important;\n}\n\n.mbr-gallery-filter {\n    li.active .btn {\n        background-color: @primaryColor;\n        border-color: @primaryColor;\n        color: contrast(@primaryColor, darken(@primaryColor, 45%), #ffffff, 60%);\n\n        &:focus {\n            box-shadow: none;\n        }\n    }\n}\n\n.nav-tabs .nav-link when(@isRoundedButtons) {\n    border-radius: 100px !important;\n}\n\na,\na:hover {\n    color: @primaryColor;\n}\n\n.mbr-plan-header {\n    .plan-variant(~'.bg-primary', @primaryColor);\n    .plan-variant(~'.bg-success', @successColor);\n    .plan-variant(~'.bg-info', @infoColor);\n    .plan-variant(~'.bg-warning', @warningColor);\n    .plan-variant(~'.bg-danger', @dangerColor);\n}\n\n/* Scroll to top button*/\n.scrollToTop_wraper when not(@isScrollToTopButton) {\n    display: none;\n}\n\n#scrollToTop a when (@isScrollToTopButton) and (@isRoundedButtons) {\n    border-radius: 100px;\n}\n\nblockquote {\n    border-color: @primaryColor;\n}\n\n/* Forms */\n.mbr-form {\n    .btn {\n        margin: .4rem 0;\n    }\n\n    .input-group-btn a.btn when(@isRoundedButtons) {\n        border-radius: 100px !important;\n\n        // padding: 1rem 3rem;\n        &:hover {\n            box-shadow: 0 10px 40px 0 rgba(0, 0, 0, .2);\n        }\n    }\n\n    .input-group-btn button[type=\"submit\"] when (@isRoundedButtons) {\n        border-radius: 100px !important;\n        padding: 1rem 3rem;\n\n        &:hover {\n            box-shadow: 0 10px 40px 0 rgba(0, 0, 0, .2);\n        }\n    }\n}\n\n//formstyler\n.jq-selectbox li:hover,\n.jq-selectbox li.selected {\n    background-color: @primaryColor;\n    color: contrast(@primaryColor, #000000, #ffffff, 60%)\n}\n\n.jq-selectbox .jq-selectbox__trigger-arrow,\n.jq-number__spin.minus:after,\n.jq-number__spin.plus:after {\n    transition: 0.4s;\n    border-top-color: gray !important;\n    border-bottom-color: gray !important;\n}\n\n.jq-selectbox:hover .jq-selectbox__trigger-arrow,\n.jq-number__spin.minus:hover:after,\n.jq-number__spin.plus:hover:after {\n    border-top-color: @primaryColor;\n    border-bottom-color: @primaryColor;\n}\n\n.xdsoft_datetimepicker .xdsoft_calendar td.xdsoft_default,\n.xdsoft_datetimepicker .xdsoft_calendar td.xdsoft_current,\n.xdsoft_datetimepicker .xdsoft_timepicker .xdsoft_time_box>div>div.xdsoft_current {\n    color: contrast(@primaryColor, #000, #fff, 30%) !important;\n    background-color: @primaryColor !important;\n    box-shadow: none !important;\n}\n\n.xdsoft_datetimepicker .xdsoft_calendar td:hover,\n.xdsoft_datetimepicker .xdsoft_timepicker .xdsoft_time_box>div>div:hover {\n    color: contrast(@secondaryColor, #000, #fff, 30%) !important;\n    background: @secondaryColor  !important;\n    box-shadow: none !important\n}\n\n//lazyload\n.lazy-bg {\n    background-image: none !important;\n}\n\n.lazy-placeholder:not(section),\n.lazy-none {\n    display: block;\n    position: relative;\n    padding-bottom: 56.25%;\n    width:100%;\n    height:auto;\n}\niframe.lazy-placeholder,\n.lazy-placeholder:after {\n    content: '';\n    position: absolute;\n    width: 200px;\n    height: 200px;\n    background: transparent no-repeat center;\n    background-size: contain;\n    top: 50%;\n    left: 50%;\n    transform: translateX(-50%) translateY(-50%);\n    @fillSVG: replace(\"@{primaryColor}\", \"#\", \"%23\");\n    background-image: url(\"data:image/svg+xml;charset=UTF-8,%3csvg width='32' height='32' viewBox='0 0 64 64' xmlns='http://www.w3.org/2000/svg' stroke='@{fillSVG}' %3e%3cg fill='none' fill-rule='evenodd'%3e%3cg transform='translate(16 16)' stroke-width='2'%3e%3ccircle stroke-opacity='.5' cx='16' cy='16' r='16'/%3e%3cpath d='M32 16c0-9.94-8.06-16-16-16'%3e%3canimateTransform attributeName='transform' type='rotate' from='0 16 16' to='360 16 16' dur='1s' repeatCount='indefinite'/%3e%3c/path%3e%3c/g%3e%3c/g%3e%3c/svg%3e\");\n}\n\nsection.lazy-placeholder:after {\n    opacity: 0.5;\n}\nbody {\n    overflow-x: hidden;\n  }\n\n  a {\n      transition: color 0.6s;\n  }\n\n\n.btn {\n    transition: none;\n}\n\n.button-variant(@background) {\n    &:hover, &:focus {\n        background:ornagered;\n        border-color: transparent!important;\n        background-size: 110%;\n            background-position: center;\n        }\n\n}\n\n  .button-outline-variant(@color) {\n      color: white!important;\n&:hover, &:focus {\nbackground: @secondaryColor;\nborder-color: transparent!important;\nbackground-size: 110%;\n    background-position: center;\n}\n\n  }"
     },
     "path": "@PROJECT_PATH@",
     "versionFirst": "5.3.5",
@@ -55,7 +55,7 @@
     "cookiesAlert": false,
     "gdpr": false,
     "pwa-switcher": false,
-    "uniqCompNum": 3,
+    "uniqCompNum": 13,
     "versionPublish": "5.3.5",
     "screenshot": "screenshot.png"
   },
@@ -116,6 +116,12 @@
               "min-height": "77px",
               "transition": "all .3s",
               "background": "@menuBgColor",
+              "border-style": "inset",
+              "border-top": "0",
+              "border-left": "1",
+              "border-right": "0",
+              "border-width": "10px",
+              "border-color": "#ff4500",
               "& when (@transparent)": {
                 "background": "none"
               },
@@ -511,7 +517,7 @@
           },
           "_name": "header3",
           "_sourceTheme": "solutionm4",
-          "_customHTML": "<section group=\"Headers\" class=\"header3\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" mbr-class=\"{\n    'mbr-fullscreen': fullScreen,\n    'mbr-parallax-background': bg.parallax}\">\n    <mbr-parameters>\n        <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <header>Size</header>\n        <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\" checked>\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"15\" step=\"1\" value=\"15\" condition=\"fullScreen == false\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"15\" step=\"1\" value=\"15\" condition=\"fullScreen == false\">\n        <header>Show/Hide</header>\n        <input type=\"checkbox\" title=\"Sub Title\" name=\"showsubTitle\">\n        <input type=\"checkbox\" title=\"Title\" name=\"showTitle\" checked>\n        <input type=\"checkbox\" title=\"Text\" name=\"showText\">\n        <input type=\"checkbox\" title=\"Buttons\" name=\"showButtons\">\n        <header>Background</header>\n        <fieldset type=\"background\" name=\"bg\" parallax>\n            <input type=\"image\" title=\"Image\" value=\"../_images/background2.jpg\" parallax selected>\n            <input type=\"color\" title=\"Color\" value=\"#232323\">\n            <input type=\"video\" title=\"Video\" value=\"https://www.youtube.com/watch?v=36YgDDJ7XSc\">\n        </fieldset>\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#000000\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.8\" condition=\"overlay && bg.type !== 'color'\">\n        <!-- End block parameters -->\n    </mbr-parameters>\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type !== 'color'\" opacity=\"{{overlayOpacity}}\" bg-color=\"{{overlayColor}}\"></div>\n    <div class=\"container align-center\">\n        <div class=\"row justify-content-center\">\n            <div class=\"mbr-white col-md-12 col-lg-9\">\n                <h2 class=\"mbr-section-subtitle mbr-fonts-style pb-1\" mbr-theme-style=\"display-7\" mbr-if=\"showsubTitle\">\n                    OUR AGENCY</h2>\n                <h1 class=\"mbr-section-title mbr-white pb-3 mbr-fonts-style\" mbr-theme-style=\"display-1\" mbr-if=\"showTitle\"><b>We make solutions to your practical problems!</b></h1>\n                <p class=\"mbr-text pb-4 mbr-white mbr-regular mbr-fonts-style\" mbr-theme-style=\"display-5\" mbr-if=\"showText\" data-app-selector=\".mbr-text, .mbr-section-btn\"></p>\n                <div mbr-buttons mbr-theme-style=\"display-4\" class=\"mbr-section-btn\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove\"><a class=\"btn btn-sm btn-white-outline\" href=\"https://mobirise.co\" data-app-placeholder=\"Type Text\"><span class=\"mobi-mbri mobi-mbri-paper-plane mbr-iconfont mbr-iconfont-btn\"></span>GET STARTED</a></div>\n            </div>\n        </div>\n    </div>\n</section>",
+          "_customHTML": "<section group=\"Headers\" class=\"header3\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" mbr-class=\"{\n    'mbr-fullscreen': fullScreen,\n    'mbr-parallax-background': bg.parallax}\">\n    <mbr-parameters>\n        <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <header>Size</header>\n        <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\" checked>\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"15\" step=\"1\" value=\"15\" condition=\"fullScreen == false\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"15\" step=\"1\" value=\"15\" condition=\"fullScreen == false\">\n        <header>Show/Hide</header>\n        <input type=\"checkbox\" title=\"Sub Title\" name=\"showsubTitle\">\n        <input type=\"checkbox\" title=\"Title\" name=\"showTitle\" checked>\n        <input type=\"checkbox\" title=\"Text\" name=\"showText\">\n        <input type=\"checkbox\" title=\"Buttons\" name=\"showButtons\">\n        <header>Background</header>\n        <fieldset type=\"background\" name=\"bg\" parallax>\n            <input type=\"image\" title=\"Image\" value=\"@PROJECT_PATH@/assets/images/mbr-1920x1280.jpg\" parallax selected>\n            <input type=\"color\" title=\"Color\" value=\"#232323\">\n            <input type=\"video\" title=\"Video\" value=\"https://www.youtube.com/watch?v=36YgDDJ7XSc\">\n        </fieldset>\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#000000\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.8\" condition=\"overlay && bg.type !== 'color'\">\n        <!-- End block parameters -->\n    </mbr-parameters>\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type !== 'color'\" opacity=\"{{overlayOpacity}}\" bg-color=\"{{overlayColor}}\"></div>\n    <div class=\"container align-center\">\n        <div class=\"row justify-content-center\">\n            <div class=\"mbr-white col-md-12 col-lg-9\">\n                <h2 class=\"mbr-section-subtitle mbr-fonts-style pb-1\" mbr-theme-style=\"display-7\" mbr-if=\"showsubTitle\">\n                    OUR AGENCY</h2>\n                <h1 class=\"mbr-section-title mbr-white pb-3 mbr-fonts-style\" mbr-theme-style=\"display-1\" mbr-if=\"showTitle\"><b>We make solutions to your practical problems!</b></h1>\n                <p class=\"mbr-text pb-4 mbr-white mbr-regular mbr-fonts-style\" mbr-theme-style=\"display-5\" mbr-if=\"showText\" data-app-selector=\".mbr-text, .mbr-section-btn\"></p>\n                <div mbr-buttons mbr-theme-style=\"display-4\" class=\"mbr-section-btn\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove\"><a class=\"btn btn-sm btn-white-outline\" href=\"https://mobirise.co\" data-app-placeholder=\"Type Text\"><span class=\"mobi-mbri mobi-mbri-paper-plane mbr-iconfont mbr-iconfont-btn\"></span>GET STARTED</a></div>\n            </div>\n        </div>\n    </div>\n</section>",
           "_cid": "sxbVZBjgf3",
           "_anchor": "header3-1",
           "_protectedParams": [],
@@ -546,12 +552,388 @@
           },
           "_name": "content1",
           "_sourceTheme": "solutionm4",
-          "_customHTML": "<section class=\"content1\" group=\"Content\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" mbr-class=\"{'mbr-parallax-background': bg.parallax}\">\n    <mbr-parameters>\n        <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <header>Size</header>\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"9\" step=\"1\" value=\"5\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"9\" step=\"1\" value=\"5\">\n        <header>Show/Hide</header>\n        <input type=\"checkbox\" title=\"Title\" name=\"showmainTitle\" checked>\n        <input type=\"checkbox\" title=\"Text\" name=\"showmainText\" checked>\n\n        <header>Background</header>\n        <fieldset type=\"background\" name=\"bg\" parallax>\n            <input type=\"image\" title=\"Image\" value=\"../_images/background3.jpg\" parallax>\n            <input type=\"color\" title=\"Color\" value=\"#f3f3f3\" selected>\n            <input type=\"video\" title=\"Video\" value=\"https://www.youtube.com/watch?v=36YgDDJ7XSc\">\n        </fieldset>\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#000000\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.7\" condition=\"overlay && bg.type !== 'color'\">\n        <!-- End block parameters -->\n    </mbr-parameters>\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type!== 'color'\" mbr-style=\"{'opacity': overlayOpacity, 'background-color': overlayColor}\">\n    </div>\n    <div class=\"container\">\n        <div class=\"row justify-content-center\" mbr-cards=\"bootstrap\">\n            <div class=\"col-lg-12 col-md-12 md-pb\">\n                <div class=\"title-wrapper align-left\">\n                    <div class=\"line\" mbr-if=\"showmainTitle\"></div>\n                    <h3 class=\"mbr-section-title mbr-white mbr-semibold pb-3 mbr-fonts-style\" data-app-selector=\".mbr-section-title, .title-wrapper\" mbr-theme-style=\"display-2\" mbr-if=\"showmainTitle\">About Us</h3>\n                    <p class=\"mbr-text pb-3 mbr-white mbr-light mbr-fonts-style\" mbr-theme-style=\"display-7\" mbr-if=\"showmainText\" data-app-selector=\".mbr-text, .mbr-section-btn\">We create solutions for your practical problems! Parking systems, integrated circuits, access control and e-voting. We've got you covered! Our solutions fully cover all modern control problems and automate modern life by saving time, resources, and expenses. Our workflow provides you with the highest quality of products and solutions. All products in our product line are manufactured by us, for your personal specifications, and way of work. Our service solutions are made individually depending on your needs and requests.&nbsp;</p>\n                </div>\n            </div>\n        </div>\n    </div>\n</section>",
+          "_customHTML": "<section class=\"content1\" group=\"Content\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" mbr-class=\"{'mbr-parallax-background': bg.parallax}\">\n    <mbr-parameters>\n        <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <header>Size</header>\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"9\" step=\"1\" value=\"5\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"9\" step=\"1\" value=\"5\">\n        <header>Show/Hide</header>\n        <input type=\"checkbox\" title=\"Title\" name=\"showmainTitle\" checked>\n        <input type=\"checkbox\" title=\"Text\" name=\"showmainText\" checked>\n\n        <header>Background</header>\n        <fieldset type=\"background\" name=\"bg\" parallax>\n            <input type=\"image\" title=\"Image\" value=\"../_images/background3.jpg\" parallax>\n            <input type=\"color\" title=\"Color\" value=\"#f3f3f3\" selected>\n            <input type=\"video\" title=\"Video\" value=\"https://www.youtube.com/watch?v=36YgDDJ7XSc\">\n        </fieldset>\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#000000\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.7\" condition=\"overlay && bg.type !== 'color'\">\n        <!-- End block parameters -->\n    </mbr-parameters>\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type!== 'color'\" mbr-style=\"{'opacity': overlayOpacity, 'background-color': overlayColor}\">\n    </div>\n    <div class=\"container\">\n        <div class=\"row justify-content-center\" mbr-cards=\"bootstrap\">\n            <div class=\"col-lg-12 col-md-12 md-pb\">\n                <div class=\"title-wrapper align-left\">\n                    <div class=\"line\" mbr-if=\"showmainTitle\"></div>\n                    <h3 class=\"mbr-section-title mbr-white mbr-semibold pb-3 mbr-fonts-style\" data-app-selector=\".mbr-section-title, .title-wrapper\" mbr-theme-style=\"display-2\" mbr-if=\"showmainTitle\">About Us</h3>\n                    <p class=\"mbr-text pb-3 mbr-white mbr-light mbr-fonts-style\" mbr-theme-style=\"display-7\" mbr-if=\"showmainText\" data-app-selector=\".mbr-text, .mbr-section-btn\">We create solutions for your practical problems! Parking systems, integrated circuits, access control and e-voting. We've got you covered! Our solutions fully cover all modern control problems and automate modern life by saving time, resources, and expenses. Our workflow provides you with the highest quality of products and solutions. All products in our product line are manufactured by us, according to your personal specifications, and way of work. Our service solutions are made individually depending on your needs and requests.&nbsp;</p>\n                </div>\n            </div>\n        </div>\n    </div>\n</section>",
           "_cid": "sxc29kzLAm",
           "_anchor": "content1-2",
           "_protectedParams": [],
           "_global": false,
           "_once": false,
+          "_params": {}
+        },
+        {
+          "alias": false,
+          "_styles": {
+            "padding-top": "(@paddingTop * 15px)",
+            "padding-bottom": "(@paddingBottom * 15px)",
+            "& when (@bg-type = 'color')": {
+              "background-color": "@bg-value"
+            },
+            "& when (@bg-type = 'image')": {
+              "background-image": "url(@bg-value)"
+            },
+            "img": {
+              "width": "100%",
+              "transition": "all 0.6s ease-in-out",
+              "height": "260px",
+              "object-fit": "cover"
+            },
+            ".card-wrapper": {
+              "background": "@cardbg",
+              "padding": "2rem",
+              "@media (max-width: 767px)": {
+                "padding": "2rem 1rem"
+              }
+            },
+            ".first": {
+              "&:hover": {
+                "&:before": {
+                  "content": "none"
+                }
+              },
+              "&:before": {
+                "position": "absolute",
+                "top": "-1rem",
+                "z-index": "-1",
+                "left": "0rem",
+                "width": "300px",
+                "height": "300px",
+                "background": "linear-gradient(to left, @secondaryColor, @primaryColor)",
+                "content": "''"
+              }
+            },
+            ".last": {
+              "&:hover": {
+                "&:after": {
+                  "content": "none"
+                }
+              },
+              "&:after": {
+                "position": "absolute",
+                "bottom": "-1rem",
+                "right": "0rem",
+                "width": "300px",
+                "z-index": "-1",
+                "height": "300px",
+                "background": "linear-gradient(to left, @secondaryColor, @primaryColor)",
+                "content": "''"
+              }
+            },
+            ".mbr-section-text": {
+              "color": "#999999"
+            },
+            ".card": {
+              "z-index": "1",
+              "position": "relative",
+              "transition": "all 0.3s",
+              ".img-wrapper": {
+                "overflow": "hidden"
+              },
+              "&:hover": {
+                "transform": "translateY(-10px)",
+                "cursor": "pointer",
+                ".card-wrapper": {
+                  "background": "@primaryColor",
+                  "color": "@texthover !important",
+                  ".mbr-section-text": {
+                    "color": "@texthover !important"
+                  }
+                }
+              }
+            }
+          },
+          "_name": "features3",
+          "_sourceTheme": "solutionm4",
+          "_customHTML": "<section class=\"features3\" group=\"Features\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" mbr-class=\"{'mbr-parallax-background': bg.parallax}\">\n\n    <mbr-parameters>\n        <header>Size</header>\n        <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"9\" step=\"1\" value=\"6\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"9\" step=\"1\" value=\"6\">\n        <header>Show/Hide</header>\n        <input type=\"checkbox\" title=\"Title\" name=\"showTitle\" checked>\n        <input type=\"checkbox\" title=\"Text\" name=\"showText\">\n        <header>Colors</header>\n        <input type=\"color\" name=\"cardbg\" title=\"Card BG\" value=\"#191919\" selected>\n        <input type=\"color\" name=\"texthover\" title=\"Text Hover\" value=\"#ffffff\" selected>\n        <select title=\"Cards\" name=\"cardsAmount\">\n            <option value=\"1\">1</option>\n            <option value=\"2\">2</option>\n            <option value=\"3\" selected>3</option>\n        </select>\n        <header>Background</header>\n        <fieldset type=\"background\" name=\"bg\" parallax>\n            <input type=\"image\" title=\"Image\" value=\"../_images/background3.jpg\" parallax>\n            <input type=\"color\" title=\"Color\" value=\"#f3f3f3\" selected>\n            <input type=\"video\" title=\"Video\" value=\"https://www.youtube.com/watch?v=36YgDDJ7XSc\">\n        </fieldset>\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#ffffff\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.5\" condition=\"overlay && bg.type !== 'color'\">\n        <!-- End block parameters -->\n    </mbr-parameters>\n\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type!== 'color'\" mbr-style=\"{'opacity': overlayOpacity, 'background-color': overlayColor}\">\n    </div>\n    <div class=\"container mbr-white\">\n        <div class=\"row justify-content-center\" mbr-cards=\"bootstrap\">\n\n            <div class=\"card md-pb first col-12 col-md-6\" mbr-class=\"{'col-lg-6': cardsAmount == '2', 'col-lg-3': cardsAmount == '4',\n                             'col-lg-4': cardsAmount == '3'}\">\n                <div class=\"card-wrapper align-center\">\n                    <div class=\"card-box align-center\" mbr-if=\"showTitle || showText || showSubTitle\">\n\n                        <h4 class=\"mbr-section-title pb-2 mbr-semibold mbr-fonts-style\" mbr-theme-style=\"display-5\" mbr-if=\"showTitle\" data-app-selector=\".mbr-section-title\">Solutions</h4>\n                        <p class=\"mbr-section-text align-center mbr-regular pb-2 mbr-fonts-style\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-section-text\">\n                            Lorem ipsum dolor sit mattis amet consectetur adipiscing</p>\n                    </div>\n                    <div class=\"img-wrapper\">\n                        <img src=\"@PROJECT_PATH@/assets/images/mbr-589x393.jpg\" alt=\"Mobirise\">\n                    </div>\n                </div>\n            </div>\n\n            <div class=\"card md-pb col-12 col-md-6\" mbr-if=\"cardsAmount > 2\" mbr-class=\"{'col-lg-6': cardsAmount == '2', 'col-lg-3': cardsAmount == '4',\n                             'col-lg-4': cardsAmount == '3'}\">\n                <div class=\"card-wrapper align-center\">\n                    <div class=\"card-box align-center\" mbr-if=\"showTitle || showText || showSubTitle\">\n\n                        <h4 class=\"mbr-section-title pb-2 mbr-semibold mbr-fonts-style\" mbr-theme-style=\"display-5\" mbr-if=\"showTitle\" data-app-selector=\".mbr-section-title\"><p>Products</p></h4>\n                        <p class=\"mbr-section-text align-center mbr-regular pb-2 mbr-fonts-style\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-section-text\">\n                            Lorem ipsum dolor sit mattis amet consectetur adipiscing</p>\n                    </div>\n                    <div class=\"img-wrapper\">\n                        <img src=\"@PROJECT_PATH@/assets/images/mbr-589x392.jpg\" alt=\"Mobirise\">\n                    </div>\n                </div>\n            </div>\n\n\n\n            <div class=\"card last col-12 col-md-6\" mbr-if=\"cardsAmount > 1\" mbr-class=\"{'col-lg-3': cardsAmount == '4',\n                             'col-lg-4': cardsAmount == '3'}\">\n                <div class=\"card-wrapper align-center\">\n                    <div class=\"card-box align-center\" mbr-if=\"showTitle || showText || showSubTitle\">\n\n                        <h4 class=\"mbr-section-title pb-2 mbr-semibold mbr-fonts-style\" mbr-theme-style=\"display-5\" mbr-if=\"showTitle\" data-app-selector=\".mbr-section-title\">Services</h4>\n                        <p class=\"mbr-section-text align-center mbr-regular pb-2 mbr-fonts-style\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-section-text\">\n                            Lorem ipsum dolor sit mattis amet consectetur adipiscing</p>\n                    </div>\n                    <div class=\"img-wrapper\">\n                        <img src=\"@PROJECT_PATH@/assets/images/mbr-589x589.png\" alt=\"Mobirise\">\n                    </div>\n                </div>\n            </div>\n\n\n\n\n        </div>\n    </div>\n</section>",
+          "_cid": "sxd2MQL62e",
+          "_anchor": "features3-4",
+          "_PHPplaceholders": [],
+          "_JSplaceholders": [],
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {}
+        },
+        {
+          "alias": false,
+          "_styles": {
+            ".google-map": {
+              "height": "30rem",
+              "position": "relative",
+              "iframe": {
+                "height": "100%",
+                "width": "100%",
+                "border-style": "inset",
+                "border-top": "0",
+                "border-left": "1",
+                "border-right": "0",
+                "border-width": "10px",
+                "border-color": "#ff4500"
+              },
+              "[data-state-details]": {
+                "color": "#6b6763",
+                "font-family": "Montserrat",
+                "height": "1.5em",
+                "margin-top": "-0.75em",
+                "padding-left": "1.25rem",
+                "padding-right": "1.25rem",
+                "position": "absolute",
+                "text-align": "center",
+                "top": "50%",
+                "width": "100%"
+              },
+              "&[data-state]": {
+                "background": "#e9e5dc"
+              },
+              "&[data-state=\"loading\"]": {
+                "[data-state-details]": {
+                  "display": "none"
+                },
+                "&::after": {}
+              }
+            }
+          },
+          "_name": "map1",
+          "_sourceTheme": "solutionm4",
+          "_customHTML": "<section class=\"map1\" group=\"Maps\">\n\n    <mbr-parameters>   \n    <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <input type=\"map\" title=\"Map\" name=\"googleMap\" place-id=\"бул. Никола Петков 73 склад 45\" value=\"бул. Никола Петков 73 склад 45\">   \n    <!-- End block parameters -->\n    </mbr-parameters> \n\n    <div class=\"google-map\" mbr-map=\"googleMap\">\n    </div>\n</section>",
+          "_cid": "sxd4K1pbCn",
+          "_anchor": "map1-6",
+          "_PHPplaceholders": [],
+          "_JSplaceholders": [],
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {}
+        },
+        {
+          "alias": false,
+          "_styles": {
+            "padding-top": "(@paddingTop * 15px)",
+            "padding-bottom": "(@paddingBottom * 15px)",
+            ".mbr-overlay": {
+              "background-color": "@overlayColor",
+              "opacity": "@overlayOpacity"
+            },
+            "& when (@bg-type = 'image')": {
+              "background-image": "url(@bg-value)"
+            },
+            "& when (@bg-type = 'color')": {
+              "background-color": "@bg-value"
+            },
+            ".item": {
+              "display": "flex",
+              "justify-content": "center",
+              "align-items": "center",
+              "padding": "0.3rem 0",
+              "p": {
+                "margin": "0",
+                "padding-left": "0.5rem"
+              }
+            },
+            ".title": {
+              "background": "linear-gradient(to left, @secondaryColor, currentColor)",
+              "-webkit-background-clip": "text",
+              "-webkit-text-fill-color": "transparent",
+              "color": "#e2090d"
+            },
+            ".container": {
+              "max-width": "1400px"
+            },
+            "li": {
+              "margin": "0",
+              "list-style": "none",
+              "cursor": "pointer"
+            },
+            ".time": {
+              "line-height": "2"
+            },
+            ".icons-wrap": {
+              "display": "flex",
+              "align-items": "center"
+            },
+            ".text-wrap": {
+              "width": "100%"
+            },
+            ".item-wrap": {
+              "display": "inline-block"
+            },
+            ".socicon-wrap": {
+              "width": "fit-content",
+              "display": "flex",
+              "margin-bottom": "0.8rem",
+              ".mbr-iconfont": {
+                "font-size": "1.3rem",
+                "background": "linear-gradient(to left, @secondaryColor, @primaryColor)",
+                "-webkit-background-clip": "text",
+                "-webkit-text-fill-color": "transparent",
+                "padding": "10px",
+                "margin-right": "0.1rem",
+                "height": "40px",
+                "display": "flex",
+                "width": "40px",
+                "justify-content": "center",
+                "align-items": "center",
+                "transition": "all 0.3s",
+                "border-radius": "100%"
+              }
+            },
+            ".align-wrap": {
+              "display": "flex",
+              "flex-direction": "column"
+            },
+            "@media (max-width: 992px)": {
+              ".col-md-6": {
+                "margin-bottom": "2rem"
+              }
+            },
+            "@media (max-width: 767px)": {
+              ".socicon-wrap": {
+                "margin": "auto"
+              }
+            },
+            ".mbr-text": {
+              "color": "#999999"
+            },
+            ".icon-title": {
+              "margin": "0",
+              "padding-bottom": "3px"
+            },
+            ".icon-title, .align-wrap": {
+              "color": "#999999",
+              "width": "100%",
+              "text-align": "center"
+            },
+            ".item-text, .item-icon": {
+              "color": "#999999"
+            }
+          },
+          "_name": "footer2",
+          "_sourceTheme": "solutionm4",
+          "_customHTML": "<section class=\"footer2\" group=\"Footer\" global=\"\" once=\"footers\" plugins=\"\">\n    <mbr-parameters>\n        <header>Size</header>\n        <input type=\"range\" inline=\"\" title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"7\">\n        <input type=\"range\" inline=\"\" title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"7\">\n        <header>Show/Hide</header>\n        <input type=\"checkbox\" title=\"Buttons\" name=\"showButtons\" checked=\"\">\n        <select title=\"Col 1 Items\" name=\"items1\">\n            <option value=\"1\">1</option>\n            <option value=\"2\">2</option>\n            <option value=\"3\">3</option>\n            <option value=\"4\">4</option>\n            <option value=\"5\" selected=\"\">5</option>\n        </select>\n        <select title=\"Col 2 Items\" name=\"items2\">\n            <option value=\"1\">1</option>\n            <option value=\"2\">2</option>\n            <option value=\"3\">3</option>\n            <option value=\"4\">4</option>\n            <option value=\"5\" selected=\"\">5</option>\n        </select>\n        <input type=\"range\" inline=\"\" title=\"Soc Icons\" name=\"icons\" min=\"0\" max=\"4\" step=\"1\" value=\"4\">\n        <input type=\"range\" inline=\"\" title=\"Contact Items\" name=\"items4\" min=\"1\" max=\"5\" step=\"1\" value=\"3\">\n        <header>Background</header>\n        <fieldset type=\"background\" name=\"bg\">\n            <input type=\"image\" title=\"Background Image\" value=\"../_images/background1.jpg\">\n            <input type=\"color\" title=\"Background Color\" value=\"#191919\" selected=\"\">\n        </fieldset>\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked=\"\">\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#000000\" condition=\"overlay &amp;&amp; bg.type !== 'color'\">\n        <input type=\"range\" inline=\"\" title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.7\" condition=\"overlay &amp;&amp; bg.type !== 'color'\">\n    </mbr-parameters>\n    <div class=\"mbr-overlay\" mbr-if=\"(overlay &amp;&amp; bg.type=='image')\"></div>\n    <div class=\"container\">\n        <div class=\"row align-left\">\n            <div class=\"col-md-6 col-lg-3\">\n                <h3 class=\"title pb-2 align-left mbr-bold mbr-fonts-style\" mbr-theme-style=\"display-2\" data-app-selector=\".title\">SolutionM4</h3>\n                <p class=\"mbr-text align-left  mbr-white mbr-regular mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".mbr-text, .mbr-section-btn\">Lorem ipsum dolor sit amet as consectetur\n                    adipiscing.<br></p>\n                <div class=\"socicon-wrap\">\n                    <span mbr-icon=\"\" class=\"mbr-iconfont socicon-twitter socicon\" mbr-if=\"icons > 0\"></span>\n                    <span mbr-icon=\"\" class=\"mbr-iconfont socicon-instagram socicon\" mbr-if=\"icons > 1\"></span>\n                    <span mbr-icon=\"\" class=\"mbr-iconfont socicon-youtube socicon\" mbr-if=\"icons > 2\"></span>\n                    <span mbr-icon=\"\" class=\"mbr-iconfont socicon-instagram socicon\" mbr-if=\"icons > 3\"></span>\n                </div>\n            </div>\n            <div class=\"col-md-6 col-lg-3\">\n                <div class=\"align-wrap\" mbr-if=\"items1 > 0\">\n                    <div class=\"item-wrap\">\n                        <div class=\"icons-wrap pb-2\">\n                            <p class=\"icon-title mbr-regular mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".icon-title, .align-wrap\">\n                                Home<br></p>\n                        </div>\n                    </div>\n                    <div class=\"item-wrap\">\n                        <div class=\"icons-wrap pb-2\" mbr-if=\"items1 > 1\">\n                            <p class=\"icon-title mbr-regular mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".icon-title, .align-wrap\">Products</p>\n                        </div>\n                    </div>\n                    <div class=\"item-wrap\">\n                        <div class=\"icons-wrap pb-2\" mbr-if=\"items1 > 2\">\n                            <p class=\"icon-title mbr-regular mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".icon-title, .align-wrap\">Services</p>\n                        </div>\n                    </div>\n                    <div class=\"item-wrap\">\n                        <div class=\"icons-wrap pb-2\" mbr-if=\"items1 > 3\">\n                            <p class=\"icon-title mbr-regular mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".icon-title, .align-wrap\">Pricing</p>\n                        </div>\n                    </div>\n                    <div class=\"item-wrap\">\n                        <div class=\"icons-wrap pb-2\" mbr-if=\"items1 > 4\">\n                            <p class=\"icon-title mbr-regular mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".icon-title, .align-wrap\">Help</p>\n                        </div>\n                    </div>\n                </div>\n            </div>\n            <div class=\"col-md-6 col-lg-3\">\n                <div class=\"align-wrap\" mbr-if=\"items2 > 0\">\n                    <div class=\"item-wrap\">\n                        <div class=\"icons-wrap pb-2\">\n\n                            <p class=\"icon-title mbr-regular mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".icon-title, .align-wrap\">\n                                Ideas &amp; Plans<br></p>\n                        </div>\n                    </div>\n                    <div class=\"item-wrap\">\n                        <div class=\"icons-wrap pb-2\" mbr-if=\"items2 > 1\">\n                            <p class=\"icon-title mbr-regular mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".icon-title, .align-wrap\">Prompt Strategies</p>\n                        </div>\n                    </div>\n                    <div class=\"item-wrap\">\n                        <div class=\"icons-wrap pb-2\" mbr-if=\"items2 > 2\">\n                            <p class=\"icon-title mbr-regular mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".icon-title, .align-wrap\">Content Composing</p>\n                        </div>\n                    </div>\n                    <div class=\"item-wrap\">\n                        <div class=\"icons-wrap pb-2\" mbr-if=\"items2 > 3\">\n                            <p class=\"icon-title mbr-regular mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".icon-title, .align-wrap\">Design &amp; Development</p>\n                        </div>\n                    </div>\n                    <div class=\"item-wrap\">\n                        <div class=\"icons-wrap pb-2\" mbr-if=\"items2 > 4\">\n                            <p class=\"icon-title mbr-regular mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".icon-title, .align-wrap\">Creative Direction</p>\n                        </div>\n                    </div>\n                </div>\n            </div>\n            <div class=\"col-md-6 align-center col-lg-3\">\n\n                <div class=\"list-items pb-4\">\n                    <div class=\"item mbr-flex\" mbr-if=\"items4 > 0\">\n                        <span mbr-icon=\"\" class=\"item-icon mobi-mbri-phone mobi-mbri\"></span>\n                        <p class=\"item-text mbr-regular mbr-white mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".item-text, .item-icon\">+213 632 435</p>\n                    </div>\n\n                    <div class=\"item mbr-flex\" mbr-if=\"items4 > 1\">\n                        <span mbr-icon=\"\" class=\"item-icon mobi-mbri-letter mobi-mbri\"></span>\n                        <p class=\"item-text mbr-regular mbr-white mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".item-text, .item-icon\"> info@yoursite.com</p>\n\n                    </div>\n\n                    <div class=\"item mbr-flex\" mbr-if=\"items4 > 2\">\n                        <span mbr-icon=\"\" class=\"item-icon mobi-mbri-map-pin mobi-mbri\"></span>\n                        <p class=\"item-text mbr-regular mbr-white mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".item-text, .item-icon\">Office 3, Street 54</p>\n\n                    </div>\n\n                    <div class=\"item mbr-flex\" mbr-if=\"items4 > 3\">\n                        <span mbr-icon=\"\" class=\"item-icon mobi-mbri-success mobi-mbri\"></span>\n                        <p class=\"item-text mbr-regular mbr-white mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".item-text, .item-icon\">Nullam placerat </p>\n\n                    </div>\n\n                    <div class=\"item mbr-flex\" mbr-if=\"items4 > 4\">\n                        <span mbr-icon=\"\" class=\"item-icon mobi-mbri-success mobi-mbri\"></span>\n                        <p class=\"item-text mbr-regular mbr-white mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".item-text, .item-icon\">Est quis lorem</p>\n\n                    </div>\n                </div>\n                <div mbr-buttons=\"\" mbr-theme-style=\"display-4\" class=\"mbr-section-btn\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove\"><a class=\"btn btn-sm btn-primary\" href=\"https://mobirise.co\" data-app-placeholder=\"Type Text\"><span class=\"mobi-mbri mobi-mbri-letter mbr-iconfont mbr-iconfont-btn\"></span>CONTACT US</a></div>\n            </div>\n        </div>\n    </div>\n</section>",
+          "_cid": "sxd8gC5HYf",
+          "_anchor": "footer2-b",
+          "_protectedParams": [],
+          "_global": true,
+          "_once": "footers",
+          "_params": {}
+        }
+      ]
+    },
+    "page1.html": {
+      "settings": {
+        "title": "Login",
+        "order": 1
+      },
+      "components": [
+        {
+          "alias": false,
+          "_styles": {
+            "padding-top": "(@paddingTop * 15px)",
+            "padding-bottom": "(@paddingBottom * 15px)",
+            ".mbr-overlay": {
+              "background-color": "@overlayColor",
+              "opacity": "@overlayOpacity"
+            },
+            "& when (@bg-type = 'image')": {
+              "background-image": "url(@bg-value)"
+            },
+            "& when (@bg-type = 'color')": {
+              "background-color": "@bg-value"
+            },
+            ".item": {
+              "display": "flex",
+              "justify-content": "center",
+              "align-items": "center",
+              "padding": "0.3rem 0",
+              "p": {
+                "margin": "0",
+                "padding-left": "0.5rem"
+              }
+            },
+            ".title": {
+              "background": "linear-gradient(to left, @secondaryColor, currentColor)",
+              "-webkit-background-clip": "text",
+              "-webkit-text-fill-color": "transparent",
+              "color": "#e2090d"
+            },
+            ".container": {
+              "max-width": "1400px"
+            },
+            "li": {
+              "margin": "0",
+              "list-style": "none",
+              "cursor": "pointer"
+            },
+            ".time": {
+              "line-height": "2"
+            },
+            ".icons-wrap": {
+              "display": "flex",
+              "align-items": "center"
+            },
+            ".text-wrap": {
+              "width": "100%"
+            },
+            ".item-wrap": {
+              "display": "inline-block"
+            },
+            ".socicon-wrap": {
+              "width": "fit-content",
+              "display": "flex",
+              "margin-bottom": "0.8rem",
+              ".mbr-iconfont": {
+                "font-size": "1.3rem",
+                "background": "linear-gradient(to left, @secondaryColor, @primaryColor)",
+                "-webkit-background-clip": "text",
+                "-webkit-text-fill-color": "transparent",
+                "padding": "10px",
+                "margin-right": "0.1rem",
+                "height": "40px",
+                "display": "flex",
+                "width": "40px",
+                "justify-content": "center",
+                "align-items": "center",
+                "transition": "all 0.3s",
+                "border-radius": "100%"
+              }
+            },
+            ".align-wrap": {
+              "display": "flex",
+              "flex-direction": "column"
+            },
+            "@media (max-width: 992px)": {
+              ".col-md-6": {
+                "margin-bottom": "2rem"
+              }
+            },
+            "@media (max-width: 767px)": {
+              ".socicon-wrap": {
+                "margin": "auto"
+              }
+            },
+            ".mbr-text": {
+              "color": "#999999"
+            },
+            ".icon-title": {
+              "margin": "0",
+              "padding-bottom": "3px"
+            },
+            ".icon-title, .align-wrap": {
+              "color": "#999999",
+              "width": "100%",
+              "text-align": "center"
+            },
+            ".item-text, .item-icon": {
+              "color": "#999999"
+            }
+          },
+          "_name": "footer2",
+          "_sourceTheme": "solutionm4",
+          "_customHTML": "<section class=\"footer2\" group=\"Footer\" global=\"\" once=\"footers\" plugins=\"\">\n    <mbr-parameters>\n        <header>Size</header>\n        <input type=\"range\" inline=\"\" title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"7\">\n        <input type=\"range\" inline=\"\" title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"7\">\n        <header>Show/Hide</header>\n        <input type=\"checkbox\" title=\"Buttons\" name=\"showButtons\" checked=\"\">\n        <select title=\"Col 1 Items\" name=\"items1\">\n            <option value=\"1\">1</option>\n            <option value=\"2\">2</option>\n            <option value=\"3\">3</option>\n            <option value=\"4\">4</option>\n            <option value=\"5\" selected=\"\">5</option>\n        </select>\n        <select title=\"Col 2 Items\" name=\"items2\">\n            <option value=\"1\">1</option>\n            <option value=\"2\">2</option>\n            <option value=\"3\">3</option>\n            <option value=\"4\">4</option>\n            <option value=\"5\" selected=\"\">5</option>\n        </select>\n        <input type=\"range\" inline=\"\" title=\"Soc Icons\" name=\"icons\" min=\"0\" max=\"4\" step=\"1\" value=\"4\">\n        <input type=\"range\" inline=\"\" title=\"Contact Items\" name=\"items4\" min=\"1\" max=\"5\" step=\"1\" value=\"3\">\n        <header>Background</header>\n        <fieldset type=\"background\" name=\"bg\">\n            <input type=\"image\" title=\"Background Image\" value=\"../_images/background1.jpg\">\n            <input type=\"color\" title=\"Background Color\" value=\"#191919\" selected=\"\">\n        </fieldset>\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked=\"\">\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#000000\" condition=\"overlay &amp;&amp; bg.type !== 'color'\">\n        <input type=\"range\" inline=\"\" title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.7\" condition=\"overlay &amp;&amp; bg.type !== 'color'\">\n    </mbr-parameters>\n    <div class=\"mbr-overlay\" mbr-if=\"(overlay &amp;&amp; bg.type=='image')\"></div>\n    <div class=\"container\">\n        <div class=\"row align-left\">\n            <div class=\"col-md-6 col-lg-3\">\n                <h3 class=\"title pb-2 align-left mbr-bold mbr-fonts-style\" mbr-theme-style=\"display-2\" data-app-selector=\".title\">SolutionM4</h3>\n                <p class=\"mbr-text align-left  mbr-white mbr-regular mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".mbr-text, .mbr-section-btn\">Lorem ipsum dolor sit amet as consectetur\n                    adipiscing.<br></p>\n                <div class=\"socicon-wrap\">\n                    <span mbr-icon=\"\" class=\"mbr-iconfont socicon-twitter socicon\" mbr-if=\"icons > 0\"></span>\n                    <span mbr-icon=\"\" class=\"mbr-iconfont socicon-instagram socicon\" mbr-if=\"icons > 1\"></span>\n                    <span mbr-icon=\"\" class=\"mbr-iconfont socicon-youtube socicon\" mbr-if=\"icons > 2\"></span>\n                    <span mbr-icon=\"\" class=\"mbr-iconfont socicon-instagram socicon\" mbr-if=\"icons > 3\"></span>\n                </div>\n            </div>\n            <div class=\"col-md-6 col-lg-3\">\n                <div class=\"align-wrap\" mbr-if=\"items1 > 0\">\n                    <div class=\"item-wrap\">\n                        <div class=\"icons-wrap pb-2\">\n                            <p class=\"icon-title mbr-regular mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".icon-title, .align-wrap\">\n                                Home<br></p>\n                        </div>\n                    </div>\n                    <div class=\"item-wrap\">\n                        <div class=\"icons-wrap pb-2\" mbr-if=\"items1 > 1\">\n                            <p class=\"icon-title mbr-regular mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".icon-title, .align-wrap\">Products</p>\n                        </div>\n                    </div>\n                    <div class=\"item-wrap\">\n                        <div class=\"icons-wrap pb-2\" mbr-if=\"items1 > 2\">\n                            <p class=\"icon-title mbr-regular mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".icon-title, .align-wrap\">Services</p>\n                        </div>\n                    </div>\n                    <div class=\"item-wrap\">\n                        <div class=\"icons-wrap pb-2\" mbr-if=\"items1 > 3\">\n                            <p class=\"icon-title mbr-regular mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".icon-title, .align-wrap\">Pricing</p>\n                        </div>\n                    </div>\n                    <div class=\"item-wrap\">\n                        <div class=\"icons-wrap pb-2\" mbr-if=\"items1 > 4\">\n                            <p class=\"icon-title mbr-regular mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".icon-title, .align-wrap\">Help</p>\n                        </div>\n                    </div>\n                </div>\n            </div>\n            <div class=\"col-md-6 col-lg-3\">\n                <div class=\"align-wrap\" mbr-if=\"items2 > 0\">\n                    <div class=\"item-wrap\">\n                        <div class=\"icons-wrap pb-2\">\n\n                            <p class=\"icon-title mbr-regular mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".icon-title, .align-wrap\">\n                                Ideas &amp; Plans<br></p>\n                        </div>\n                    </div>\n                    <div class=\"item-wrap\">\n                        <div class=\"icons-wrap pb-2\" mbr-if=\"items2 > 1\">\n                            <p class=\"icon-title mbr-regular mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".icon-title, .align-wrap\">Prompt Strategies</p>\n                        </div>\n                    </div>\n                    <div class=\"item-wrap\">\n                        <div class=\"icons-wrap pb-2\" mbr-if=\"items2 > 2\">\n                            <p class=\"icon-title mbr-regular mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".icon-title, .align-wrap\">Content Composing</p>\n                        </div>\n                    </div>\n                    <div class=\"item-wrap\">\n                        <div class=\"icons-wrap pb-2\" mbr-if=\"items2 > 3\">\n                            <p class=\"icon-title mbr-regular mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".icon-title, .align-wrap\">Design &amp; Development</p>\n                        </div>\n                    </div>\n                    <div class=\"item-wrap\">\n                        <div class=\"icons-wrap pb-2\" mbr-if=\"items2 > 4\">\n                            <p class=\"icon-title mbr-regular mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".icon-title, .align-wrap\">Creative Direction</p>\n                        </div>\n                    </div>\n                </div>\n            </div>\n            <div class=\"col-md-6 align-center col-lg-3\">\n\n                <div class=\"list-items pb-4\">\n                    <div class=\"item mbr-flex\" mbr-if=\"items4 > 0\">\n                        <span mbr-icon=\"\" class=\"item-icon mobi-mbri-phone mobi-mbri\"></span>\n                        <p class=\"item-text mbr-regular mbr-white mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".item-text, .item-icon\">+213 632 435</p>\n                    </div>\n\n                    <div class=\"item mbr-flex\" mbr-if=\"items4 > 1\">\n                        <span mbr-icon=\"\" class=\"item-icon mobi-mbri-letter mobi-mbri\"></span>\n                        <p class=\"item-text mbr-regular mbr-white mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".item-text, .item-icon\"> info@yoursite.com</p>\n\n                    </div>\n\n                    <div class=\"item mbr-flex\" mbr-if=\"items4 > 2\">\n                        <span mbr-icon=\"\" class=\"item-icon mobi-mbri-map-pin mobi-mbri\"></span>\n                        <p class=\"item-text mbr-regular mbr-white mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".item-text, .item-icon\">Office 3, Street 54</p>\n\n                    </div>\n\n                    <div class=\"item mbr-flex\" mbr-if=\"items4 > 3\">\n                        <span mbr-icon=\"\" class=\"item-icon mobi-mbri-success mobi-mbri\"></span>\n                        <p class=\"item-text mbr-regular mbr-white mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".item-text, .item-icon\">Nullam placerat </p>\n\n                    </div>\n\n                    <div class=\"item mbr-flex\" mbr-if=\"items4 > 4\">\n                        <span mbr-icon=\"\" class=\"item-icon mobi-mbri-success mobi-mbri\"></span>\n                        <p class=\"item-text mbr-regular mbr-white mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".item-text, .item-icon\">Est quis lorem</p>\n\n                    </div>\n                </div>\n                <div mbr-buttons=\"\" mbr-theme-style=\"display-4\" class=\"mbr-section-btn\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove\"><a class=\"btn btn-sm btn-primary\" href=\"https://mobirise.co\" data-app-placeholder=\"Type Text\"><span class=\"mobi-mbri mobi-mbri-letter mbr-iconfont mbr-iconfont-btn\"></span>CONTACT US</a></div>\n            </div>\n        </div>\n    </div>\n</section>",
+          "_cid": "sxd8gC5HYf",
+          "_anchor": "footer2-b",
+          "_protectedParams": [],
+          "_global": true,
+          "_once": "footers",
           "_params": {}
         }
       ]
